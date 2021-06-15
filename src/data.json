@@ -1,0 +1,82 @@
+[
+    {
+        "id":0,
+        "ign" :"Freakier",
+        "playerLevel":60,
+        "vipLevel":13,
+        "gems":10000,
+        "might":280000000,
+        "castleRole":"Main Account",
+        "castleLevel":25,
+        "resetTime":1500,
+        "lastUpdate":1400,
+        "shield":1909,
+        "buildingComposition":[
+            {
+                "buildingName":"Manor",
+                "buildingCategory":"Resources",
+                "buildingCount":11,
+                "buildingLevel":25
+            },
+            {
+                "buildingName":"Mines",
+                "buildingCategory":"Resources",
+                "buildingCount":1,
+                "buildingLevel":25
+            },
+            {
+                "buildingName":"Mines",
+                "buildingCategory":"Resources",
+                "buildingCount":1,
+                "buildingLevel":24
+            }
+        ],
+        "castleSkin":[
+            {
+                "castleSkinImg": "Arctic_Base.png",
+                "castleSkinImgAlt": "Arctic Base",
+                "castleSkinStar": 2
+            },
+            {
+                "castleSkinImg": "Default_25.png",
+                "castleSkinImgAlt": "Default Skin",
+                "castleSkinStar": 3
+            }
+        ],
+        "hero":[
+            {
+                
+            }
+        ]
+        
+    },
+    {
+        "id":1,
+        "ign" :"BeeFier",
+        "castleSkin":[
+            {
+                "castleSkinImg": "Island_Paradise.png",
+                "castleSkinImgAlt": "Island_Paradise",
+                "castleSkinStar": 2
+            },
+            {
+                "castleSkinImg": "Default_25.png",
+                "castleSkinImgAlt": "Default Skin",
+                "castleSkinStar": 1
+            },
+            {
+                "castleSkinImg": "Sagittarius_Cloth.png",
+                "castleSkinImgAlt": "Sagittarius Cloth",
+                "castleSkinStar": "None"
+            }
+        ],
+        "gems":10000,
+        "might":280000000,
+        "castleRole":"Bank Account/Hyper Food",
+        "castleLevel":25,
+        "resetTime":1500,
+        "lastUpdate":1400,
+        "shield":1909
+    }
+
+]
