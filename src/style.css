@@ -13,6 +13,29 @@ body.dark {
   color: white;
   background: #202020;
 }
+select,
+option {
+  border: none;
+  background-image: none;
+  background-color: var(--header-background);
+  color: white;
+  outline: none;
+}
+select::after,
+option::after {
+  border: none;
+  background-image: none;
+  background-color: var(--header-background);
+  color: white;
+}
+select:active,
+option:active {
+  border: none;
+  background-image: none;
+  background-color: var(--header-background);
+  color: white;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -523,6 +546,28 @@ body.dark {
   align-self: center;
   justify-self: center;
 }
+.guildfest-tbody {
+  height: 200px;
+  overflow-y: scroll;
+}
+.guildfest-tbody::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.guildfest-tbody::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+.guildfest-tbody::-webkit-scrollbar-thumb {
+  background: var(--header-background);
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+.guildfest-description {
+  display: none;
+}
+
 .guildfest-tcontent {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -536,6 +581,239 @@ body.dark {
   align-self: center;
   justify-self: center;
   padding: 0.5em 0;
+}
+.equipment-card {
+  height: auto;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-background);
+  border-radius: 5px;
+  /* border: 1px solid var(--header-background); */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.equipment-header {
+  background-color: var(--header-background);
+  /* color: white; */
+  padding: 0.5em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.equipment-body {
+  margin: 0.5em;
+}
+.equipment-thumbnail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  align-content: center;
+  grid-gap: 1em;
+  background-color: var(--body-background);
+  padding: 1em 1;
+  cursor: pointer;
+}
+.equipment-thumbnail > p {
+  border: 1px solid var(--header-background);
+  padding: 1em;
+  border-radius: 5px;
+  background-color: var(--header-background);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 1em;
+}
+.equipment-modal {
+  background-color: rgba(0, 0, 0, 0.75); /* Fallback color */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  position: fixed; /* Stay in place */
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  display: none;
+}
+.equipment-modal::-webkit-scrollbar {
+  display: none;
+}
+.equipment-modal-card {
+  /* display: none; */
+
+  width: 90%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-background);
+  border-radius: 5px;
+  /* border: 1px solid var(--header-background); */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.equipment-modal-header {
+  background-color: var(--header-background);
+  /* color: white; */
+  padding: 0.5em;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.equipment-modal-body {
+  margin: 0.5em;
+}
+.equipment-modal-thumbnail {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  align-content: center;
+  grid-gap: 1em;
+  background-color: var(--body-background);
+  padding: 1em 1;
+  cursor: pointer;
+}
+.equipment-modal-thumbnail > .equipment-image {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  align-content: center;
+  grid-gap: 1em;
+}
+.equipment-main-hand,
+.equipment-legs,
+.equipment-helmet,
+.equipment-armor,
+.equipment-accessories-1,
+.equipment-accessories-2,
+.equipment-off-hand,
+.equipment-accessories-3 {
+  width: 114px;
+  height: 114px;
+  background-image: url("/LMwebsite/src/images/Equipement/Common_Equipment.png");
+  background-size: cover;
+}
+.equipment-main-hand,
+.equipment-legs {
+  justify-self: end;
+}
+.equipment-helmet,
+.equipment-armor,
+.equipment-accessories-1,
+.equipment-accessories-2 {
+  justify-self: center;
+}
+.equipment-off-hand,
+.equipment-accessories-3 {
+  justify-self: start;
+}
+.equipment-result {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  align-content: center;
+}
+.equipment-result > .result-header {
+  justify-self: start;
+  grid-column: 1/4;
+}
+.equipment-result > .result-body {
+  justify-self: center;
+  grid-column: 1/4;
+}
+.main-hand-jewels,
+.off-hand-jewels,
+.helmet-jewels,
+.armor-jewels,
+.legs-jewels,
+.accessories-1-jewels,
+.accessories-2-jewels,
+.accessories-3-jewels {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 25%;
+  margin-top: -25%;
+}
+.main-hand-jewels > .jewel-slot-1,
+.main-hand-jewels > .jewel-slot-2,
+.main-hand-jewels > .jewel-slot-3,
+.main-hand-jewels > .sigils,
+.off-hand-jewels > .jewel-slot-1,
+.off-hand-jewels > .jewel-slot-2,
+.off-hand-jewels > .jewel-slot-3,
+.off-hand-jewels > .sigils,
+.helmet-jewels > .jewel-slot-1,
+.helmet-jewels > .jewel-slot-2,
+.helmet-jewels > .jewel-slot-3,
+.helmet-jewels > .sigils,
+.armor-jewels > .jewel-slot-1,
+.armor-jewels > .jewel-slot-2,
+.armor-jewels > .jewel-slot-3,
+.armor-jewels > .sigils,
+.legs-jewels > .jewel-slot-1,
+.legs-jewels > .jewel-slot-2,
+.legs-jewels > .jewel-slot-3,
+.legs-jewels > .sigils,
+.accessories-1-jewels > .jewel-slot-1,
+.accessories-1-jewels > .jewel-slot-2,
+.accessories-1-jewels > .jewel-slot-3,
+.accessories-1-jewels > .sigils,
+.accessories-2-jewels > .jewel-slot-1,
+.accessories-2-jewels > .jewel-slot-2,
+.accessories-2-jewels > .jewel-slot-3,
+.accessories-2-jewels > .sigils,
+.accessories-3-jewels > .jewel-slot-1,
+.accessories-3-jewels > .jewel-slot-2,
+.accessories-3-jewels > .jewel-slot-3,
+.accessories-3-jewels > .sigils {
+  width: 25%;
+  height: auto;
+  background-image: url("/LMwebsite/src/images/Equipement/Common_Equipment.png");
+  background-size: cover;
+}
+.main-hand-jewels > .jewel-slot-1 > img,
+.main-hand-jewels > .jewel-slot-2 > img,
+.main-hand-jewels > .jewel-slot-3 > img,
+.main-hand-jewels > .sigils > img,
+.off-hand-jewels > .jewel-slot-1 > img,
+.off-hand-jewels > .jewel-slot-2 > img,
+.off-hand-jewels > .jewel-slot-3 > img,
+.off-hand-jewels > .sigils > img,
+.helmet-jewels > .jewel-slot-1 > img,
+.helmet-jewels > .jewel-slot-2 > img,
+.helmet-jewels > .jewel-slot-3 > img,
+.helmet-jewels > .sigils > img,
+.armor-jewels > .jewel-slot-1 > img,
+.armor-jewels > .jewel-slot-2 > img,
+.armor-jewels > .jewel-slot-3 > img,
+.armor-jewels > .sigils > img,
+.legs-jewels > .jewel-slot-1 > img,
+.legs-jewels > .jewel-slot-2 > img,
+.legs-jewels > .jewel-slot-3 > img,
+.legs-jewels > .sigils > img,
+.accessories-1-jewels > .jewel-slot-1 > img,
+.accessories-1-jewels > .jewel-slot-2 > img,
+.accessories-1-jewels > .jewel-slot-3 > img,
+.accessories-1-jewels > .sigils > img,
+.accessories-2-jewels > .jewel-slot-1 > img,
+.accessories-2-jewels > .jewel-slot-2 > img,
+.accessories-2-jewels > .jewel-slot-3 > img,
+.accessories-2-jewels > .sigils > img,
+.accessories-3-jewels > .jewel-slot-1 > img,
+.accessories-3-jewels > .jewel-slot-2 > img,
+.accessories-3-jewels > .jewel-slot-3 > img,
+.accessories-3-jewels > .sigils > img {
+  width: auto;
+  height: 100%;
 }
 @media only screen and (min-width: 700px) {
   .ph-others {
@@ -569,6 +847,33 @@ body.dark {
   }
   .legendary-grade {
     border-width: 5px;
+  }
+  .guildfest-tcontent > p > img {
+    width: 70%;
+  }
+  .guildfest-card {
+    grid-column: 1/3;
+  }
+  .guildfest-theader {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .guildfest-tcontent {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .guildfest-description {
+    display: block;
+  }
+  .guildfest-quest {
+    grid-column: 1/3;
+  }
+  .equipment-card {
+    grid-column: 1/3;
+  }
+  .equipment-thumbnail {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .equipment-modal-thumbnail {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -604,6 +909,15 @@ body.dark {
   .legendary-grade {
     border-width: 3px;
   }
+  .guildfest-card {
+    grid-column: 2/4;
+  }
+  .equipment-card {
+    grid-column: 1/4;
+  }
+  .equipment-thumbnail {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 @media only screen and (min-width: 1100px) {
   .fa-star {
@@ -619,6 +933,12 @@ body.dark {
 @media only screen and (min-width: 1200px) {
   .fa-star {
     font-size: 35px;
+  }
+  .equipment-modal-card {
+    /* display: none; Hidden by default */
+
+    width: 70%;
+    margin-left: 15%;
   }
 }
 @media only screen and (min-width: 1300px) {

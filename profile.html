@@ -180,6 +180,18 @@
         <div class="guildfest-card">
           <div class="guildfest-header">
             <h1>Guildfest</h1>
+            <div class="drop-down">
+              <label for="gauntlet">Gauntlet:</label>
+              <select name="gauntlet" id="gauntlet" class="gauntlet">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="expert">Expert</option>
+                <option value="expert random quest">Expert Random Quest</option>
+                <option value="master">Master</option>
+                <option value="master random quest">Master Random Quest</option>
+              </select>
+            </div>
             <div class="hide-content" id="guildfest-hide-content">
               <i
                 class="fa fa-arrow-down fa-lg guildfest-header-icon"
@@ -190,41 +202,394 @@
           <div class="guildfest-body">
             <div class="guildfest-table-info">
               <div class="guildfest-theader">
-                <p>Quest</p>
-                <p>Amount</p>
-                <p>Bag Item</p>
+                <p class="guildfest-quest">Quest</p>
+                <p class="guildfest-amount">Amount</p>
+                <p class="guildfest-bag-item">Bag Item</p>
               </div>
               <div class="guildfest-tbody">
                 <div class="guildfest-tcontent">
                   <p class="quest">
-                    <img src="src/images/Guildfest/cargo-trades.png" title="Cargo Ship Trades" alt="" />
+                    <img
+                      src="src/images/Guildfest/cargo-trades.png"
+                      title="Cargo Ship Trades"
+                      alt=""
+                    />
                   </p>
+                  <p class="guildfest-description">This is a description</p>
                   <p class="item-needed">46</p>
                   <p class="bag-item">N/A</p>
                   <p class="quest">
-                    <img src="src/images/Guildfest/dark-essence.png" title="Win Darkness Coalition battles (Rally Captain Only)" alt="" />
+                    <img
+                      src="src/images/Guildfest/dark-essence.png"
+                      title="Win Darkness Coalition battles (Rally Captain Only)"
+                      alt=""
+                    />
                   </p>
+                  <p class="guildfest-description">This is a description</p>
                   <p class="item-needed">6</p>
                   <p class="bag-item">N/A</p>
                   <p class="quest">
-                    <img src="src/images/Guildfest/holy-stars.png" title="Encounter Labyrinth Guardians" alt="" />
+                    <img
+                      src="src/images/Guildfest/holy-stars.png"
+                      title="Encounter Labyrinth Guardians"
+                      alt=""
+                    />
                   </p>
+                  <p class="guildfest-description">This is a description</p>
                   <p class="item-needed">3</p>
                   <p class="bag-item">12000 Holy Star</p>
+                  <p class="quest">
+                    <img
+                      src="src/images/Guildfest/holy-stars.png"
+                      title="Encounter Labyrinth Guardians"
+                      alt=""
+                    />
+                  </p>
+                  <p class="guildfest-description">This is a description</p>
+                  <p class="item-needed">3</p>
+                  <p class="bag-item">12000 Holy Star</p>
+                  <p class="quest">
+                    <img
+                      src="src/images/Guildfest/holy-stars.png"
+                      title="Encounter Labyrinth Guardians"
+                      alt=""
+                    />
+                  </p>
+                  <p class="guildfest-description">This is a description</p>
+                  <p class="item-needed">3</p>
+                  <p class="bag-item">12000 Holy Star</p>
+                  <p class="quest">
+                    <img
+                      src="src/images/Guildfest/holy-stars.png"
+                      title="Encounter Labyrinth Guardians"
+                      alt=""
+                    />
+                  </p>
+                  <p class="guildfest-description">This is a description</p>
+                  <p class="item-needed">3</p>
+                  <p class="bag-item">12000 Holy Star</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="equipment-card">
+          <div class="equipment-header">
+            <h1>Equpiment</h1>
+            <div class="hide-content" id="equipment-hide-content">
+              <i
+                class="fa fa-arrow-down fa-lg equipment-header-icon"
+                id="cs-icon"
+              ></i>
+            </div>
+          </div>
+          <div class="equipment-body">
+            <div class="equipment-thumbnail">
+              <p>Construction Equipment</p>
+              <p>Research Equipment</p>
+              <p>Gathering Equipment</p>
+              <p>Monster Hunt Equipment</p>
+              <p>Merging Equipment</p>
+              <p>Speed Equipment</p>
+              <p>Mixed War Gear LVL: 60 Equipment</p>
+              <p>Mixed War Gear LVL: &#60; 60 Equipment</p>
+            </div>
+          </div>
+        </div>
+        <div class="equipment-modal">
+          <div class="equipment-modal-card">
+            <div class="equipment-modal-header">
+              <h1>Equpiment</h1>
+              <div class="hide-content" id="equipment-modal-hide-content">
+                <i
+                  class="fa fa-times-circle fa-lg equipment-modal-header-icon"
+                  id="cs-icon"
+                ></i>
+              </div>
+            </div>
+            <div class="equipment-modal-body">
+              <div class="equipment-modal-thumbnail">
+                <div class="equipment-image">
+                  <div class="equipment-main-hand">
+                    <img
+                      src="src/images/Equipement/Frostwing-Greatsword.png"
+                      alt=""
+                    />
+                    <div class="main-hand-jewels">
+                      <div class="jewel-slot-1">
+                        <img
+                          src="src/images/Equipement/Infantry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-2">
+                        <img
+                          src="src/images/Equipement/Ranged_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-3">
+                        <img
+                          src="src/images/Equipement/Cavalry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="sigils">
+                        <img
+                          src="src/images/Equipement/Common_Equipment.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="equipment-off-hand">
+                    <img
+                      src="src/images/Equipement/GrimReaper-Eternal_Codex.png"
+                      alt=""
+                    />
+                    <div class="off-hand-jewels">
+                      <div class="jewel-slot-1">
+                        <img
+                          src="src/images/Equipement/Infantry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-2">
+                        <img
+                          src="src/images/Equipement/Ranged_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-3">
+                        <img
+                          src="src/images/Equipement/Cavalry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="sigils">
+                        <img
+                          src="src/images/Equipement/Common_Equipment.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="equipment-helmet">
+                    <img
+                      src="src/images/Equipement/QueenBee-Bumblehelm.png"
+                      alt=""
+                    />
+                    <div class="helmet-jewels">
+                      <div class="jewel-slot-1">
+                        <img
+                          src="src/images/Equipement/Infantry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-2">
+                        <img
+                          src="src/images/Equipement/Ranged_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-3">
+                        <img
+                          src="src/images/Equipement/Cavalry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="sigils">
+                        <img
+                          src="src/images/Equipement/Common_Equipment.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="equipment-accessories-1">
+                    <img
+                      src="src/images/Equipement/BonAppeti-Ambrosial_Cup.png"
+                      alt=""
+                    />
+                    <div class="accessories-1-jewels">
+                      <div class="jewel-slot-1">
+                        <img
+                          src="src/images/Equipement/Infantry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-2">
+                        <img
+                          src="src/images/Equipement/Ranged_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-3">
+                        <img
+                          src="src/images/Equipement/Cavalry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="sigils">
+                        <img
+                          src="src/images/Equipement/Common_Equipment.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="equipment-armor">
+                    <img
+                      src="src/images/Equipement/MechaTrojan-Firewall_Plate.png"
+                      alt=""
+                    />
+                    <div class="armor-jewels">
+                      <div class="jewel-slot-1">
+                        <img
+                          src="src/images/Equipement/Infantry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-2">
+                        <img
+                          src="src/images/Equipement/Ranged_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-3">
+                        <img
+                          src="src/images/Equipement/Cavalry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="sigils">
+                        <img
+                          src="src/images/Equipement/Common_Equipment.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="equipment-accessories-2">
+                    <img
+                      src="src/images/Equipement/BonAppeti-Ambrosial_Cup.png"
+                      alt=""
+                    />
+                    <div class="accessories-2-jewels">
+                      <div class="jewel-slot-1">
+                        <img
+                          src="src/images/Equipement/Infantry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-2">
+                        <img
+                          src="src/images/Equipement/Ranged_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-3">
+                        <img
+                          src="src/images/Equipement/Cavalry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="sigils">
+                        <img
+                          src="src/images/Equipement/Common_Equipment.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="equipment-legs">
+                    <img
+                      src="src/images/Equipement/BlackWing-Dragon's_Talon.png"
+                      alt=""
+                    />
+                    <div class="legs-jewels">
+                      <div class="jewel-slot-1">
+                        <img
+                          src="src/images/Equipement/Infantry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-2">
+                        <img
+                          src="src/images/Equipement/Ranged_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-3">
+                        <img
+                          src="src/images/Equipement/Cavalry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="sigils">
+                        <img
+                          src="src/images/Equipement/Common_Equipment.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="equipment-accessories-3">
+                    <img
+                      src="src/images/Equipement/MegaMaggot-Blight_Ring.png"
+                      alt=""
+                    />
+                    <div class="accessories-3-jewels">
+                      <div class="jewel-slot-1">
+                        <img
+                          src="src/images/Equipement/Infantry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-2">
+                        <img
+                          src="src/images/Equipement/Ranged_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="jewel-slot-3">
+                        <img
+                          src="src/images/Equipement/Cavalry_ATK_Jewel.png"
+                          alt=""
+                        />
+                      </div>
+                      <div class="sigils">
+                        <img
+                          src="src/images/Equipement/Common_Equipment.png"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="equipment-result">
+                  <p class="result-header">Training Boost</p>
+                  <p class="result-body">Training Troops Boots: 100%</p>
+                  <p class="result-body">Training Troops Boots: 100%</p>
+                  <p class="result-header">Training Boost</p>
+                  <p class="result-body">Training Troops Boots: 100%</p>
+                  <p class="result-body">Training Troops Boots: 100%</p>
+                  <p class="result-body">Training Troops Boots: 100%</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="float-bottom" id="float-area">
-      <div class="toggle-btn">
-        <!-- <i class="fas fa-moon fa-lg hidden"></i> -->
-        <i class="fas fa-sun fa-lg change-icon" id="toggle-icon"></i>
+      <div class="float-bottom" id="float-area">
+        <div class="toggle-btn">
+          <!-- <i class="fas fa-moon fa-lg hidden"></i> -->
+          <i class="fas fa-sun fa-lg change-icon" id="toggle-icon"></i>
+        </div>
+        <a href="index.html">
+          <i class="fa fa-arrow-left fa-lg my-float"></i>
+        </a>
       </div>
-      <a href="index.html">
-        <i class="fa fa-arrow-left fa-lg my-float"></i>
-      </a>
     </div>
     <script src="src/script.js"></script>
   </body>
