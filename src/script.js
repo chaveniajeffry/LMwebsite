@@ -3,8 +3,34 @@ const profileName = document.querySelector('.ph-name')
 const profileMight = document.querySelector('.ph-might')
 const profileOthers = document.querySelector('.ph-others')
 const csBody = document.querySelector('.cs-body')
+const equipmentThumbnail = document.querySelector('.equipment-thumbnail')
+const equipmentModal = document.querySelector('.equipment-modal')
+const closeEquipmentModal = document.querySelector('#equipment-modal-hide-content')
 const profile = "profile.html"
 const hideContent = document.querySelectorAll('.hide-content')
+let cardList = []
+// console.log(closeEquipmentModal)
+if(equipmentThumbnail != null){
+    for(let i=0; i<equipmentThumbnail.children.length;i++){
+    
+        equipmentThumbnail.children[i].addEventListener('click', ()=>{
+            equipmentModal.style.display="block"
+            equipmentModal.style.animationName = "pop-in"
+            equipmentModal.style.animationDuration = ".5s"
+            equipmentModal.style.animationTimingFunction = "ease-in-out"
+        })
+    }
+    closeEquipmentModal.addEventListener('click', ()=>{
+        equipmentModal.style.animationName = "pop-out"
+        equipmentModal.style.animationDuration = ".5s"
+        equipmentModal.style.animationTimingFunction = "ease-in-out"
+        equipmentModal.style.animationFillMode = "forwards"
+        setTimeout(()=>{equipmentModal.style.display="none"}, 5*100)
+    })
+}
+
+
+
 let currentCard = []
 if(hideContent != null){
     for(let i=0;i<hideContent.length;i++){
@@ -20,13 +46,15 @@ function hideThisContent(){
             currentContentToHide = currentCard[i]
         }
     }
-    
+    console.log(currentContentToHide)
+    const cardName = currentContentToHide.toString().replace("hide-content","card")
     const cardType = currentContentToHide.toString().replace("hide-content","body")
+    const cardHeader = currentContentToHide.toString().replace("hide-content","header")
     const cardTypeIcon = currentContentToHide.toString().replace("hide-content","header-icon")
     
     const bodyContent = document.querySelector("."+cardType)
     const csIcon = document.querySelector("."+cardTypeIcon)
-    // console.log(bodyContent)
+    console.log(cardHeader)
     
     //far fa-square
     if(bodyContent.id == ""){//hide element
@@ -35,16 +63,30 @@ function hideThisContent(){
         bodyContent.setAttribute('id',cardType+"-hidden")
         csIcon.removeAttribute('class')
         csIcon.setAttribute('class','fa fa-arrow-left fa-lg '+cardTypeIcon)
+        document.querySelector('.'+cardName).style.height = 0
+        document.querySelector('.'+cardHeader).style.boxShadow = "0px 0px 5px 0px rgba(0, 0, 0, 0.75)"
     }else{//view element
         bodyContent.removeAttribute('class')
         bodyContent.setAttribute('class',cardType)
         bodyContent.removeAttribute('id')
         csIcon.removeAttribute('class')
         csIcon.setAttribute('class','fa fa-arrow-down fa-lg '+cardTypeIcon)
+        document.querySelector('.'+cardName).style.height = "auto"
+        document.querySelector('.'+cardHeader).style.boxShadow = "none"
+        const isLargeNumber = (element) => element == cardName;
+        const indexNum = cardList.findIndex(isLargeNumber)
+        cardList.splice(indexNum,1)
     }
-    
+    // const IisLargeNumber = (element) => element == cardName;
+    // const IindexNum = cardList.findIndex(IisLargeNumber)
+    // console.log(IindexNum)
+    if(cardList.includes("cs-card") && cardList.includes("building-info-card") && cardList.includes("troop-composition-card")){
+        floatBottomTop()
+    }
+    // console.log(cardList.includes("cs-card","building-info-card","troop-composition-card"))
+    // cardList.every((cardvalue)=>cardvalue=="cs-card" && cardvalue=="building-info-card" && cardvalue=="troop-composition-card")
 }
-
+console.log()
 //store data id after redirect on profile page
 accounts.forEach(account => 
     account.addEventListener('click', ()=>{
@@ -129,9 +171,6 @@ if(document.querySelector('.toggle-btn') !=null){
 
 
 window.onresize = floatBottomTop
-
-
-
 window.onscroll = floatBottomTop
 function floatBottomTop(){
     if (window.innerWidth > document.body.clientWidth) {
