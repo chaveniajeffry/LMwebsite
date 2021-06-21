@@ -172,6 +172,13 @@ if(document.querySelector('.toggle-btn') !=null){
 
 window.onresize = floatBottomTop
 window.onscroll = floatBottomTop
+let equipmentChildrenText = []
+const equipmentChildrenElemet = document.querySelector('.equipment-thumbnail').children
+for(let i=0; i<equipmentChildrenElemet.length;i++){
+    equipmentChildrenText.push(equipmentChildrenElemet[i].innerHTML)
+    // equipmentChildrenElemet[i].innerHTML = "Change"
+}
+console.log(equipmentChildrenText)
 function floatBottomTop(){
     if (window.innerWidth > document.body.clientWidth) {
         window.onscroll = function() {
@@ -185,5 +192,19 @@ function floatBottomTop(){
           }
     }else{
         document.querySelector('#float-area').setAttribute("class","float-bottom")
+    }
+    //check if 1000px
+    
+    if(window.innerWidth >= 1000){
+        // document.querySelector('.equipment-thumbnail').children[0].innerHTML = "aa"
+        for(let i=0; i<equipmentChildrenElemet.length;i++){
+            // equipmentChildrenText.push(equipmentChildrenElemet[i].innerHTML)
+            equipmentChildrenElemet[i].innerHTML = "Change"
+        }
+    }else{
+        for(let i=0; i<equipmentChildrenElemet.length;i++){
+            // equipmentChildrenText.push(equipmentChildrenElemet[i].innerHTML)
+            equipmentChildrenElemet[i].innerHTML = equipmentChildrenText[i]
+        }
     }
 }

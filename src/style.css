@@ -851,6 +851,95 @@ option:active {
   width: auto;
   height: 100%;
 }
+.bag-info-card {
+  height: auto;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-background);
+  border-radius: 5px;
+  /* border: 1px solid var(--header-background); */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  animation-name: pop-in;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+.bag-info-header {
+  background-color: var(--header-background);
+  /* color: white; */
+  padding: 0.5em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bag-info-body {
+  margin: 0.5em;
+}
+
+.usable-items {
+  margin-top: 0.5em;
+}
+.bag-info-table-info {
+  border: 1px solid var(--header-background);
+}
+.bag-info-main-theader {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-auto-rows: minmax(25px, auto);
+  align-content: center;
+  background-color: var(--header-background);
+  /* color: white; */
+}
+.bag-info-main-theader p {
+  align-self: center;
+  justify-self: center;
+}
+.bag-info-sub-theader {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(25px, auto);
+  align-content: center;
+  background-color: var(--header-background);
+  /* color: white; */
+}
+.bag-info-sub-theader p {
+  align-self: center;
+  justify-self: center;
+}
+.bag-info-tcontent {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  align-content: center;
+  background-color: var(--body-background);
+  padding: 0.5em 0;
+  /* border: 1px solid var(--header-background); */
+}
+.bag-info-tcontent > p {
+  align-self: center;
+  justify-self: center;
+}
+.bag-info-tbody {
+  height: 200px;
+  overflow-y: scroll;
+}
+.bag-info-tbody::-webkit-scrollbar {
+  width: 10px;
+}
+/* Track */
+.bag-info-tbody::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bag-info-tbody::-webkit-scrollbar-thumb {
+  background: var(--header-background);
+  border-radius: 5px;
+  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
 @media only screen and (min-width: 700px) {
   .ph-others {
     display: grid;
@@ -919,6 +1008,12 @@ option:active {
   .equipment-result > .result-body {
     padding: 0.2em 0;
   }
+  .bag-info-card {
+    grid-column: 1/3;
+  }
+  .bag-info-body {
+    columns: 2;
+  }
 }
 @media only screen and (min-width: 1000px) {
   .profile-body {
@@ -936,6 +1031,9 @@ option:active {
   }
   .fa-star {
     font-size: 25px;
+  }
+  .equipment-card {
+    grid-column: 1/1;
   }
   .common-grade {
     border-width: 3px;
@@ -955,6 +1053,12 @@ option:active {
   .guildfest-card {
     grid-column: 2/4;
   }
+  .bag-info-card {
+    grid-column: 2/4;
+  }
+  .bag-info-tbody {
+    height: 100px;
+  }
 }
 @media only screen and (min-width: 1100px) {
   .fa-star {
@@ -972,8 +1076,6 @@ option:active {
     font-size: 35px;
   }
   .equipment-modal-card {
-    /* display: none; Hidden by default */
-
     width: 70%;
     margin-left: 15%;
   }
