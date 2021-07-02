@@ -51,20 +51,7 @@
                 <p>Count</p>
                 <p>Level</p>
               </div>
-              <div class="tbody">
-                <div class="tcontent">
-                  <p>Manor</p>
-                  <p>Resource</p>
-                  <p>11</p>
-                  <p>25</p>
-                </div>
-                <div class="tcontent">
-                  <p>Manor</p>
-                  <p>Resource</p>
-                  <p>11</p>
-                  <p>25</p>
-                </div>
-              </div>
+              <div class="tbody"></div>
             </div>
           </div>
         </div>
@@ -88,44 +75,7 @@
                 <p>T4 Count</p>
                 <p>T5 Count</p>
               </div>
-              <div class="troop-composition-tbody">
-                <div class="troop-composition-tcontent">
-                  <p>Infantry</p>
-                  <p>12000</p>
-                  <p>305758</p>
-                  <p>241000</p>
-                  <p>317854</p>
-                  <p>0</p>
-                </div>
-                <div class="troop-composition-tcontent">
-                  <p>Ranged</p>
-                  <p>12000</p>
-                  <p>305758</p>
-                  <p>241000</p>
-                  <p>317854</p>
-                  <p>0</p>
-                </div>
-                <div class="troop-composition-tcontent">
-                  <p>Cavalry</p>
-                  <p>12000</p>
-                  <p>305758</p>
-                  <p>241000</p>
-                  <p>317854</p>
-                  <p>0</p>
-                </div>
-                <div class="troop-composition-tcontent">
-                  <p>Siege</p>
-                  <p>12000</p>
-                  <p>305758</p>
-                  <p>241000</p>
-                  <p>317854</p>
-                  <p>0</p>
-                </div>
-                <div class="troop-composition-total">
-                  <p>Total</p>
-                  <p class="total">1000000</p>
-                </div>
-              </div>
+              <div class="troop-composition-tbody"></div>
             </div>
           </div>
         </div>
@@ -285,21 +235,32 @@
           </div>
           <div class="equipment-body">
             <div class="equipment-thumbnail">
-              <p>Construction Gear Set</p>
-              <p>Research Gear Set</p>
-              <p>Gathering Gear Set</p>
-              <p>Monster Hunt Gear Set</p>
-              <p>Merging Gear Set</p>
-              <p>Speed Gear Set</p>
-              <p>Mixed War Gear LVL: 60 Gear Set</p>
-              <p>Mixed War Gear LVL: &#60; 60 Gear Set</p>
+              <p data-id="CGS" title="Construction Gear Set">
+                Construction Gear Set
+              </p>
+              <p data-id="RGS" title="Research Gear Set">Research Gear Set</p>
+              <p data-id="GGS" title="Gathering Gear Set">Gathering Gear Set</p>
+              <p data-id="MHGS" title="Monster Hunt Gear Set">
+                Monster Hunt Gear Set
+              </p>
+              <p data-id="MGS" title="Merging Gear Set">Merging Gear Set</p>
+              <p data-id="SGS" title="Speed Gear Set">Speed Gear Set</p>
+              <p data-id="MWGLVL60GS" title="Mixed War Gear LVL: 60 Gear Set">
+                Mixed War Gear LVL: 60 Gear Set
+              </p>
+              <p
+                data-id="MWGLVL&#60;60GS"
+                title="Mixed War Gear LVL: &#60; 60 Gear Set"
+              >
+                Mixed War Gear LVL: &#60; 60 Gear Set
+              </p>
             </div>
           </div>
         </div>
         <div class="equipment-modal">
           <div class="equipment-modal-card">
             <div class="equipment-modal-header">
-              <h1>Equpiment</h1>
+              <h1 class="equipment-modal-heading"></h1>
               <div id="equipment-modal-hide-content">
                 <i
                   class="fa fa-times-circle fa-lg equipment-modal-header-icon"
@@ -691,6 +652,118 @@
                   <p>Infantry</p>
                   <p>12000</p>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="research-card">
+          <div class="research-header">
+            <h1>Research</h1>
+            <div class="hide-content" id="research-hide-content">
+              <i
+                class="fa fa-arrow-down fa-lg research-header-icon"
+                id="cs-icon"
+              ></i>
+            </div>
+          </div>
+          <div class="research-body">
+            <div class="research-thumbnail"></div>
+          </div>
+        </div>
+        <div class="research-modal">
+          <div class="research-modal-card">
+            <div class="research-modal-header">
+              <h1 class="research-modal-heading"></h1>
+              <div id="research-modal-hide-content">
+                <i
+                  class="fa fa-times-circle fa-lg research-modal-header-icon"
+                  id="cs-icon"
+                ></i>
+              </div>
+            </div>
+            <div class="research-modal-body">
+              <div class="research-modal-thumbnail">
+                <!-- <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R01-C01-Construction Speed.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div>
+                <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R01-C02-Food Harvesting I.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div>
+                <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R02-C01-Vault Management.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div>
+                <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R02-C02-Stone Harvesting I.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div>
+                <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R02-C03-Timber Harvesting I.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div>
+                <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R02-C04-Metal Harvesting I.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div>
+                <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R03-C01-Weight Training I.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div>
+                <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R03-C02-Resource Harvesting I.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div>
+                <div class="research-modal-panel">
+                  <div class="rm-panel-img">
+                    <img
+                      src="src/images/Research/Economy/R04-C01-Gem Harvesting I.png"
+                    />
+                  </div>
+                  <div class="rm-panel-name">Construction I</div>
+                  <div class="rm-panel-status">1/2</div>
+                </div> -->
               </div>
             </div>
           </div>

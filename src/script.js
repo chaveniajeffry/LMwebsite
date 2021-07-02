@@ -6,6 +6,14 @@ const csBody = document.querySelector('.cs-body')
 const equipmentThumbnail = document.querySelector('.equipment-thumbnail')
 const equipmentModal = document.querySelector('.equipment-modal')
 const closeEquipmentModal = document.querySelector('#equipment-modal-hide-content')
+const equipmentModalHeading = document.querySelector('.equipment-modal-heading')
+const researchThumbnail = document.querySelector('.research-thumbnail')
+const researchModal = document.querySelector('.research-modal')
+const closeResearchModal = document.querySelector('#research-modal-hide-content')
+const researchModalHeading = document.querySelector('.research-modal-heading')
+const researchModalthumbnail = document.querySelector('.research-modal-thumbnail')
+const buildingInfoTableBody = document.querySelector('.building-info-body .table-info .tbody')
+const troopCompositionTableBody = document.querySelector('.troop-composition-body .troop-composition-table-info .troop-composition-tbody')
 const profile = "profile.html"
 const hideContent = document.querySelectorAll('.hide-content')
 let cardList = []
@@ -14,6 +22,7 @@ if(equipmentThumbnail != null){
     for(let i=0; i<equipmentThumbnail.children.length;i++){
     
         equipmentThumbnail.children[i].addEventListener('click', ()=>{
+            equipmentModalHeading.innerHTML = equipmentThumbnail.children[i].innerHTML 
             equipmentModal.style.display="block"
             equipmentModal.style.animationName = "pop-in"
             equipmentModal.style.animationDuration = ".5s"
@@ -28,6 +37,7 @@ if(equipmentThumbnail != null){
         setTimeout(()=>{equipmentModal.style.display="none"}, 5*100)
     })
 }
+
 
 
 
@@ -46,7 +56,6 @@ function hideThisContent(){
             currentContentToHide = currentCard[i]
         }
     }
-    console.log(currentContentToHide)
     const cardName = currentContentToHide.toString().replace("hide-content","card")
     const cardType = currentContentToHide.toString().replace("hide-content","body")
     const cardHeader = currentContentToHide.toString().replace("hide-content","header")
@@ -54,7 +63,6 @@ function hideThisContent(){
     
     const bodyContent = document.querySelector("."+cardType)
     const csIcon = document.querySelector("."+cardTypeIcon)
-    console.log(cardHeader)
     
     //far fa-square
     if(bodyContent.id == ""){//hide element
@@ -86,7 +94,6 @@ function hideThisContent(){
     // console.log(cardList.includes("cs-card","building-info-card","troop-composition-card"))
     // cardList.every((cardvalue)=>cardvalue=="cs-card" && cardvalue=="building-info-card" && cardvalue=="troop-composition-card")
 }
-console.log()
 //store data id after redirect on profile page
 accounts.forEach(account => 
     account.addEventListener('click', ()=>{
@@ -108,6 +115,9 @@ function storeData(data){
     for(let i=0;i<data.length;i++){
         if(data[i].ign === sessionStorage.getItem('name')){
             viewProfile(data[i])
+            viewResearch(data[i])
+            viewBuildingInfo(data[i].buildingComposition)
+            viewTroopComposition(data[i].troopComposition)
         }
     }
 }
@@ -127,7 +137,6 @@ function viewProfile(account_data){
         profileMight.innerHTML = "Might: "+might.toLocaleString()
         profileOthers.innerHTML = "<div>Gems: "+gems+"</div><div>Reset Time: "+resetTime+"</div><div>Shield: "+shield+"</div><div>Last Update: "+lastUpdate+"</div>".toString();
         for(let csi=0;csi<account_data.castleSkin.length;csi++){
-            // console.log(account_data.castleSkin.length)
             let csTemplate = '<div class="castle-skin">'.toString()
             csBody.innerHTML = csTemplate;
             let castleSkinImg = account_data.castleSkin[csi].castleSkinImg
@@ -154,6 +163,125 @@ function viewProfile(account_data){
 }
 
 
+//viewresearch
+function viewResearch(account_data){
+    const researchData = account_data.research
+    let researchModalThumbnailContent = ""
+    for(let i=0; i<researchData.length;i++){
+        researchModalThumbnailContent += "<img src='"+researchData[i].imgDirectory+researchData[i].imgName+"' alt='"+researchData[i].imgAlt+"'>"
+    }
+    researchThumbnail.innerHTML = researchModalThumbnailContent
+    
+    if(researchThumbnail != null){
+        for(let i=0; i<researchThumbnail.children.length;i++){
+                researchThumbnail.children[i].addEventListener('click', ()=>{
+                    researchModalHeading.innerHTML = researchThumbnail.children[i].getAttribute('alt')
+                    researchModal.style.display="block"
+                    researchModal.style.animationName = "pop-in"
+                    researchModal.style.animationDuration = ".5s"
+                    researchModal.style.animationTimingFunction = "ease-in-out"
+                    viewResearchModalData(researchData[i])
+                })
+        }
+        
+        closeResearchModal.addEventListener('click', ()=>{
+            researchModal.style.animationName = "pop-out"
+            researchModal.style.animationDuration = ".5s"
+            researchModal.style.animationTimingFunction = "ease-in-out"
+            researchModal.style.animationFillMode = "forwards"
+            setTimeout(()=>{researchModal.style.display="none"}, 5*100)
+        })
+    }
+}
+
+//viewbuildingInfo
+function viewBuildingInfo(account_data){
+    let buildingInfoTableBodyContent=""
+    for(let i=0; i<account_data.length;i++){
+        buildingInfoTableBodyContent+="<div class='tcontent'>"
+        buildingInfoTableBodyContent+="<p>"+account_data[i].buildingName+"</p>"
+        buildingInfoTableBodyContent+="<p>"+account_data[i].buildingCategory+"</p>"
+        buildingInfoTableBodyContent+="<p>"+account_data[i].buildingCount+"</p>"
+        buildingInfoTableBodyContent+="<p>"+account_data[i].buildingLevel+"</p>"
+        buildingInfoTableBodyContent+="</div>"
+    }
+    buildingInfoTableBody.innerHTML = buildingInfoTableBodyContent
+}
+
+//view troop composition
+function viewTroopComposition(account_data){
+    // troopCompositionTableBody
+    let troopCompositionTableBodyContent = ""
+    let totalTroopCount = 0
+    for(let i=0;i<account_data.length;i++){
+        troopCompositionTableBodyContent+="<div class='troop-composition-tcontent'>"
+        troopCompositionTableBodyContent+="<p>"+account_data[i].troopType+"</p>"
+        troopCompositionTableBodyContent+="<p>"+account_data[i].t1Count+"</p>"
+        troopCompositionTableBodyContent+="<p>"+account_data[i].t2Count+"</p>"
+        troopCompositionTableBodyContent+="<p>"+account_data[i].t3Count+"</p>"
+        troopCompositionTableBodyContent+="<p>"+account_data[i].t4Count+"</p>"
+        troopCompositionTableBodyContent+="<p>"+account_data[i].t5Count+"</p>"
+        troopCompositionTableBodyContent+="</div>"
+        totalTroopCount+=account_data[i].t1Count+
+                        account_data[i].t2Count+
+                        account_data[i].t3Count+
+                        account_data[i].t4Count+
+                        account_data[i].t5Count
+    }
+    troopCompositionTableBodyContent+="<div class='troop-composition-total'>"
+    troopCompositionTableBodyContent+="<p>Total</p>"
+    troopCompositionTableBodyContent+="<p class='total'>"+totalTroopCount+"</p>"
+    troopCompositionTableBodyContent+="</div>"
+    troopCompositionTableBody.innerHTML = troopCompositionTableBodyContent
+}
+
+
+//view data template
+// function viewTroopComposition(account_data){
+//     // troopCompositionTableBody
+//     let troopCompositionTableBodyContent = ""
+//     console.log(account_data)
+// }
+
+//view research modal data
+function viewResearchModalData(research_data){
+    const imgDirectory = research_data.imgDirectory
+    let researchModalthumbnailContent=""
+    if(research_data.economy){
+       for(let z=0; z<research_data.economy.length;z++){
+        // const cardName = currentContentToHide.toString().replace("hide-content","card")
+        // console.log(research_data.economy[z].imgName.toString().substring(4,7))
+        let gridRow = research_data.economy[z].imgName.toString().substring(1,3)
+        let gridColumn = research_data.economy[z].imgName.toString().substring(5,7)
+        // console.log(parseInt(gridRow)+gridColumn)
+        if(parseInt(gridColumn) == 1){
+            researchModalthumbnailContent+="<div class='research-modal-panel research-modal-col-1' "
+        }else if(parseInt(gridColumn) == 2){
+            researchModalthumbnailContent+="<div class='research-modal-panel research-modal-col-2' "
+        }else if(parseInt(gridColumn) == 3){
+            researchModalthumbnailContent+="<div class='research-modal-panel research-modal-col-3' "
+        }else if(parseInt(gridColumn) == 4){
+            researchModalthumbnailContent+="<div class='research-modal-panel research-modal-col-4' "
+        }
+        researchModalthumbnailContent+="style='grid-row:"+parseInt(gridRow)+"/"+(parseInt(gridRow)+1)+"'>"
+        researchModalthumbnailContent+="<div class='rm-panel-img'>"
+        researchModalthumbnailContent+="<img src='"+imgDirectory+research_data.economy[z].imgName+"'>"
+        researchModalthumbnailContent+="</div>"
+        researchModalthumbnailContent+="<div class='rm-panel-name'>"
+        researchModalthumbnailContent+=research_data.economy[z].name
+        researchModalthumbnailContent+="</div>"
+        researchModalthumbnailContent+="<div class='rm-panel-status'>"
+        researchModalthumbnailContent+=research_data.economy[z].status
+        researchModalthumbnailContent+="</div>"
+        researchModalthumbnailContent+="</div>"
+        
+       }
+       
+    //    console.log(researchModalthumbnailContent)
+       researchModalthumbnail.innerHTML = researchModalthumbnailContent
+    }
+}
+
 //function for dark theme
 if(document.querySelector('.toggle-btn') !=null){
     document.querySelector('.toggle-btn').addEventListener('click',()=>{
@@ -178,7 +306,6 @@ for(let i=0; i<equipmentChildrenElemet.length;i++){
     equipmentChildrenText.push(equipmentChildrenElemet[i].innerHTML)
     // equipmentChildrenElemet[i].innerHTML = "Change"
 }
-console.log(equipmentChildrenText)
 function floatBottomTop(){
     if (window.innerWidth > document.body.clientWidth) {
         window.onscroll = function() {
@@ -197,14 +324,42 @@ function floatBottomTop(){
     
     if(window.innerWidth >= 1000){
         // document.querySelector('.equipment-thumbnail').children[0].innerHTML = "aa"
+        let equipmentRawNameArray = []
+        let initialOnlyEquipmentName = []
         for(let i=0; i<equipmentChildrenElemet.length;i++){
-            // equipmentChildrenText.push(equipmentChildrenElemet[i].innerHTML)
-            equipmentChildrenElemet[i].innerHTML = "Change"
+            // let equipmentRawName = equipmentChildrenElemet[i].innerHTML.toString()
+            // // EquipmentRawNameArray += EquipmentRawName.split(" ")
+            // equipmentRawNameArray.push(equipmentRawName.split(" "))
+            
+            equipmentChildrenText.push(equipmentChildrenElemet[i].innerHTML)
+            // equipmentChildrenElemet[i].setAttribute('title',htmlEntities(equipmentChildrenElemet[i].innerHTML))
+            equipmentChildrenElemet[i].innerHTML = equipmentChildrenElemet[i].getAttribute('data-id')
         }
+        // console.log(equipmentRawNameArray)
+        // for(let i=0; i<equipmentRawNameArray.length;i++){
+        //     for(let j=0;j<equipmentRawNameArray[i].length;j++){
+        //         console.log(equipmentRawNameArray[i][j].charAt(0).toUpperCase())
+        //         let tempInitialName = ""
+        //         if(equipmentRawNameArray[i][j].charAt(0).toUpperCase() != "S"){
+        //             tempInitialName+=equipmentRawNameArray[i][j]
+        //         }else{
+        //             tempInitialName+=equipmentRawNameArray[i][j]
+        //             equipmentRawNameArray.push(tempInitialName)
+        //             tempInitialName = ""
+        //         }
+        //     }
+        // }
+        // console.log(equipmentRawNameArray)
     }else{
         for(let i=0; i<equipmentChildrenElemet.length;i++){
-            // equipmentChildrenText.push(equipmentChildrenElemet[i].innerHTML)
+            equipmentChildrenText.push(equipmentChildrenElemet[i].innerHTML)
+            // equipmentChildrenElemet[i].setAttribute('title',htmlEntities(equipmentChildrenElemet[i].innerHTML))
             equipmentChildrenElemet[i].innerHTML = equipmentChildrenText[i]
+            
+
         }
     }
+}
+function htmlEntities(str) {
+    return String(str).replace('&lt;','<');
 }

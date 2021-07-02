@@ -940,10 +940,136 @@ option:active {
   border-radius: 5px;
   box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
 }
+
+.research-card {
+  height: auto;
+  margin: 0.5em;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-background);
+  border-radius: 5px;
+  /* border: 1px solid var(--header-background); */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  animation-name: pop-in;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+.research-header {
+  background-color: var(--header-background);
+  /* color: white; */
+  padding: 0.5em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.research-body {
+  margin: 0.5em;
+}
+.research-body > .research-thumbnail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+}
+.research-body > .research-thumbnail > img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.research-modal {
+  background-color: rgba(0, 0, 0, 0.75); /* Fallback color */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  position: fixed; /* Stay in place */
+  z-index: 1;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  display: none;
+  animation-name: pop-in;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+}
+.research-modal-header-icon {
+  cursor: pointer;
+  transition: display 2s;
+}
+.research-modal::-webkit-scrollbar {
+  display: none;
+}
+.research-modal-card {
+  /* display: none; */
+
+  width: 90%;
+  margin: 5%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--body-background);
+  border-radius: 5px;
+  /* border: 1px solid var(--header-background); */
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.research-modal-header {
+  background-color: var(--header-background);
+  /* color: white; */
+  padding: 0.5em;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.research-modal-body {
+  margin: 0.5em;
+}
+.research-modal-thumbnail {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(10px, auto);
+  align-content: center;
+  grid-gap: 1em;
+  background-color: var(--body-background);
+}
+.research-modal-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.research-modal-panel > div {
+  margin: 0.2em 0;
+}
+.rm-panel-img img {
+  width: 100%;
+  height: 100%;
+}
+.research-modal-panel {
+  justify-self: center;
+}
+.research-modal-col-1 {
+  grid-column: 1/2;
+}
+.research-modal-col-2 {
+  grid-column: 2/3;
+}
+.research-modal-col-3 {
+  grid-column: 3/4;
+}
+.research-modal-col-4 {
+  grid-column: 4/5;
+}
 @media only screen and (min-width: 700px) {
   .ph-others {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .research-body > .research-thumbnail {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 @media only screen and (min-width: 800px) {
@@ -1014,6 +1140,9 @@ option:active {
   .bag-info-body {
     columns: 2;
   }
+  .research-card {
+    grid-column: 1/3;
+  }
 }
 @media only screen and (min-width: 1000px) {
   .profile-body {
@@ -1059,6 +1188,11 @@ option:active {
   .bag-info-tbody {
     height: 100px;
   }
+  .research-modal-card {
+    max-width: 75%;
+    margin: 5% 12.5% 0 12.5%;
+    /* margin: 5% 20%; */
+  }
 }
 @media only screen and (min-width: 1100px) {
   .fa-star {
@@ -1084,6 +1218,11 @@ option:active {
   .fa-star {
     font-size: 40px;
   }
+  .research-modal-card {
+    max-width: 60%;
+    /* margin: 5% 12.5% 0 12.5%; */
+    margin: 5% 20% 0% 20%;
+  }
 }
 @media only screen and (min-width: 1400px) {
   .fa-star {
@@ -1091,6 +1230,9 @@ option:active {
   }
   .hero-level {
     font-size: x-large;
+  }
+  .research-body > .research-thumbnail {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 .hidden {

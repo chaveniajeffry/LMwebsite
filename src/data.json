@@ -11,6 +11,18 @@
         "resetTime":1500,
         "lastUpdate":1400,
         "shield":1909,
+        "castleSkin":[
+            {
+                "castleSkinImg": "Arctic_Base.png",
+                "castleSkinImgAlt": "Arctic Base",
+                "castleSkinStar": 2
+            },
+            {
+                "castleSkinImg": "Default_25.png",
+                "castleSkinImgAlt": "Default Skin",
+                "castleSkinStar": 3
+            }
+        ],
         "buildingComposition":[
             {
                 "buildingName":"Manor",
@@ -31,24 +43,190 @@
                 "buildingLevel":24
             }
         ],
-        "castleSkin":[
+        "troopComposition":[
             {
-                "castleSkinImg": "Arctic_Base.png",
-                "castleSkinImgAlt": "Arctic Base",
-                "castleSkinStar": 2
+                "troopType":"Infantry",
+                "t1Count":12342,
+                "t2Count":132415,
+                "t3Count":100,
+                "t4Count":100,
+                "t5Count":0
             },
             {
-                "castleSkinImg": "Default_25.png",
-                "castleSkinImgAlt": "Default Skin",
-                "castleSkinStar": 3
+                "troopType":"Ranged",
+                "t1Count":100,
+                "t2Count":100,
+                "t3Count":100,
+                "t4Count":100,
+                "t5Count":0
+            },
+            {
+                "troopType":"Cavalry",
+                "t1Count":100,
+                "t2Count":100,
+                "t3Count":100,
+                "t4Count":100,
+                "t5Count":0
+            },
+            {
+                "troopType":"Siege",
+                "t1Count":100,
+                "t2Count":100,
+                "t3Count":100,
+                "t4Count":100,
+                "t5Count":0
             }
         ],
-        "hero":[
+        "research":[
             {
-                
+                "economy":[
+                    {
+                        "name":"Construction Speed I",
+                        "imgName":"R01-C01-Construction Speed.png",
+                        "status":1
+                    },
+                    {
+                        "name":"Food Harvesting I",
+                        "imgName":"R01-C03-Food Harvesting I.png",
+                        "status":2
+                    },
+                    {
+                        "name":"Vault Management",
+                        "imgName":"R02-C01-Vault Management.png",
+                        "status":1
+                    },
+                    {
+                        "name":"Stone Harvesting I",
+                        "imgName":"R02-C02-Stone Harvesting I.png",
+                        "status":2
+                    },
+                    {
+                        "name":"Timber Harvesting I",
+                        "imgName":"R02-C03-Timber Harvesting I.png",
+                        "status":1
+                    },
+                    {
+                        "name":"Metal Harvesting I",
+                        "imgName":"R02-C04-Metal Harvesting I.png",
+                        "status":2
+                    },
+                    {
+                        "name":"Weight Training I",
+                        "imgName":"R03-C01-Weight Training I.png",
+                        "status":1
+                    },
+                    {
+                        "name":"Gem Harvesting I",
+                        "imgName":"R04-C02-Gem Harvesting I.png",
+                        "status":1
+                    },
+                    {
+                        "name":"Resource Harvesting I",
+                        "imgName":"R03-C03-Resource Harvesting I.png",
+                        "status":2
+                    }
+                ],
+                "imgDirectory":"src/images/Research/Economy/",
+                "imgName":"Economy.png",
+                "imgAlt":"Economy"
+            },
+            {
+                "defense":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Defense/",
+                "imgName":"Defense.png",
+                "imgAlt":"Defense"
+            },
+            {
+                "military":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Military/",
+                "imgName":"Military.png",
+                "imgAlt":"Military"
+            },
+            {
+                "monsterHunt":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Monster Hunt/",
+                "imgName":"Monster Hunt.png",
+                "imgAlt":"Monster Hunt"
+            },
+            {
+                "upgradeDefenses":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Upgrade Defenses/",
+                "imgName":"Upgrade Defenses.png",
+                "imgAlt":"Upgrade Defenses"
+            },
+            {
+                "upgradeMilitary":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Upgrade Military/",
+                "imgName":"Upgrade Military.jpg",
+                "imgAlt":"Upgrade Military"
+            },
+            {
+                "armyLeadership":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Army Leadership/",
+                "imgName":"Army Leadership.jpg",
+                "imgAlt":"Army Leadership"
+            },
+            {
+                "militaryCommand":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Military Command/",
+                "imgName":"Military Command.jpg",
+                "imgAlt":"Military Command"
+            },
+            {
+                "familiars":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Familiars/",
+                "imgName":"Familiars.jpg",
+                "imgAlt":"Familiars"
+            },
+            {
+                "familiarBattles":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Familiar Battles/",
+                "imgName":"Familiar Battles.png",
+                "imgAlt":"Familiar Battles"
+            },
+            {
+                "sigils":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Sigils/",
+                "imgName":"Sigils.jpg",
+                "imgAlt":"Sigils"
+            },
+            {
+                "wonderBattles":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Wonder Battles/",
+                "imgName":"Wonder Battles.jpg",
+                "imgAlt":"Wonder Battles"
+            },
+            {
+                "gears":{
+                    
+                },
+                "imgDirectory":"src/images/Research/Gears/",
+                "imgName":"Gears.png",
+                "imgAlt":"Gears"
             }
         ]
-        
     },
     {
         "id":1,
